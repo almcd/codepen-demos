@@ -1,8 +1,12 @@
 Conway's Game of Life
 ===========
 
-Inspired to create this after reading Steven Levy's *Hackers: Heroes of the Computer Revolution*.
-With thanks to Daniel Shiffman and his book *The Nature of Code* - http://natureofcode.com.
+OOP implementation of Conway's Game of Life in JavaScript, using HTML5 Canvas and some ES2015 techniques.
+
+- Inspired to create this after reading Steven Levy's *Hackers: Heroes of the Computer Revolution*.
+- With thanks to Daniel Shiffman and his book *The Nature of Code* - http://natureofcode.com.
+
+View at: https://codepen.io/almcd/pen/oYzgOQ
 
 ## License
 The MIT License (MIT)

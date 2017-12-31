@@ -6,6 +6,8 @@ Vehicle that seeks a draggable target and displays steering and arriving behavio
 - With thanks to Daniel Shiffman and his book *The Nature of Code* - http://natureofcode.com.
 - Uses the Victor.js library for vector math - http://victorjs.org
 
+View at: https://codepen.io/almcd/pen/BzGXoo
+
 ## License
 The MIT License (MIT)
 

@@ -3,6 +3,8 @@ Pong
 
 Simple Pong implementation, which plays infinitely. Demo focuses on implementation of Pong AI using ["invisible ball"](https://gamedev.stackexchange.com/a/57397) strategy.
 
+View at: https://codepen.io/almcd/pen/dJWdLm
+
 ## License
 The MIT License (MIT)
 
