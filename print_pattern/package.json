@@ -1,0 +1,14 @@
+{
+  "name": "print_pattern",
+  "version": "1.0.0",
+  "description": "10 PRINT",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1 -p 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}

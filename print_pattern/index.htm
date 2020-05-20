@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10 Print</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+        }
+
+        #canvas {
+            background-color: #0082c8;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script type="text/javascript">
+(function(){
+    // Inspired by the Commodore 64 BASIC program - https://10print.org/
+
+    // Setup canvas
+    var canvas = document.getElementById('canvas');
+    var canvasWidth = canvas.width = window.innerWidth;
+    var canvasHeight = canvas.height = window.innerHeight;
+    var ctx = canvas.getContext('2d');
+    var continueAnimation = true;
+
+    // Set up grid
+    ctx.font = "bold 30px monospace";
+    ctx.fillStyle = "#ffffff";
+    var cellWidth = 9;
+    var cellHeight = 20;
+    var columns = Math.round(canvasWidth / cellWidth) - 3;
+    var rows = Math.round(canvasHeight / cellHeight);
+    var x = 1;
+    var y = cellHeight * 2;
+
+    // Core animation loop
+    function animate() {
+        if (x < columns) {
+            ctx.fillText(String.fromCharCode(Math.random() < 0.5 ? 47 : 92), x*cellWidth, y);
+            x++;
+        } else {
+            x = 1;
+            y = y + cellHeight;
+            if (y > canvasHeight - cellHeight) {
+                continueAnimation = false;
+            }
+        }
+
+        // Call animation loop recursively
+        if (continueAnimation) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    animate(); // Initial call to animation loop
+})();
+</script>
+</body>
+</html>
