@@ -23,7 +23,7 @@
     canvas.addEventListener('touchend', dragEnd, false);
 
     // Initalise variables
-    var mouseY, mouseX, dragOk;
+    var mouseY, mouseX, dragOk, inBounds;
     var targetX = 100;
     var targetY = 100;
 
@@ -45,7 +45,7 @@
     /**
      * Ascertains if input is within bounds of target
      */
-    function dragStart() {
+    function inBoundsForDrag() {
         var mouseY = event.clientY || event.targetTouches[0].pageY;
         var mouseX = event.clientX || event.targetTouches[0].pageX;
 
@@ -54,14 +54,35 @@
         var dist = Math.sqrt(y*y + x*x);
 
         if (dist < 22) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Modifies drag status
+     */
+    function dragStart() {
+        inBounds = inBoundsForDrag();
+        
+        if (inBounds) {
             dragOk = true;
         }
     }
 
     /**
-     * Updates the target to current input values
+     * Modifies mouse cursor and updates the target to current input values
      */
     function dragUpdate() {
+        inBounds = inBoundsForDrag();
+
+        if (inBounds) {
+            document.body.style.cursor = "move";
+        } else {
+            document.body.style.cursor = "default";
+        }
+
         if (dragOk){
             targetY = event.clientY || event.targetTouches[0].pageY;
             targetX = event.clientX || event.targetTouches[0].pageX;
